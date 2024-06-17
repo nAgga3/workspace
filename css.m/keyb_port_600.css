@@ -1,0 +1,130 @@
+	#extkeyboard 
+	{
+ 	    width: 600px; 
+	    left: 50%;
+	    margin-left: -300px; 	    
+   }
+	#extkeyboard td 
+	{
+	    padding-left : 1px;
+	    padding-right : 1px;
+	    padding-top : 3px;
+	    padding-bottom : 3px;
+	    font-weight: bold;
+	    font-size: 14px;
+	}
+	#extkeyboard p
+	{
+		margin-top:18px;
+	}
+	#extkeyboard img
+	{
+		margin-top:-5px;
+	}
+    .t2
+    {
+	    height: 50px;
+	    width: 50px;
+    }
+    .t3 
+    {
+	    font-size: 13px;
+	    height: 50px;
+	    width: 75px;    
+    }
+    .t4
+    {
+	    height: 50px;
+	    width: 100px;    
+    }
+
+
+   	div#extkeyboard div.t1, div#extkeyboard div.t2, div#extkeyboard div.t3, div#extkeyboard div.t4 
+	{
+	    text-align: center;
+	    vertical-align:middle;
+        font-family: Helvetica ;
+        font-weight: normal ;
+        -webkit-text-shadow:1px 1px 1px #fff;
+        margin: 1px;
+        font-size: 15px;
+        line-height:15px;
+        height: 40px!important;
+        padding-top: 10px;
+	}
+    
+	div#extkeyboard div.t2
+    {
+	    width: 50px;
+    }
+	div#extkeyboard div.t3 
+    {
+	    font-size: 14px;
+	    width: 77px;    
+    }
+	div#extkeyboard div.t4
+    {
+	    width: 104px;    
+    }
+
+    #extkeys
+    {
+		font-size:14px;
+	}
+	#extkeys td
+	{
+	    padding-left : 2px;
+	    padding-right : 2px;
+	    padding-top : 2px;
+	    padding-bottom : 2px;
+	}
+    #extkeys .t2
+    {
+	    height: 28px;
+	    width: 48px;
+    }
+    #extkeys p 
+    {
+	    margin-top: 8px;
+    }
+    
+   	#preferences  div fieldset label, #preferences  div fieldset input, #preferences  div,	#preferences label, #prefbuttons span
+	{
+		font-size:14px;	
+	}
+
+	#preferences label span, #prefbuttons span
+	{
+		margin:5px;
+		padding:5px;
+	}
+	
+	#preferences div fieldset input
+	{
+		width:410px;
+	}
+	
+	#pcconnection label
+	{
+		margin-top:10px;
+	}
+	
+	#pcconnection label, #preferences  div fieldset div.ui-controlgroup-label
+	{
+		width:100px;
+	}
+	
+	 #preferences  div fieldset div div.ui-radio label
+	{
+		width:130px;
+	}
+	
+	#preferences  div fieldset
+	{
+		margin:20px;
+	}	
+
+	#prefbuttons div
+	{
+		margin-top:20px;
+	}

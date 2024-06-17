@@ -1,0 +1,1 @@
+const e=Object.freeze({PUBLICIP:"cmPublicIp",PRIVATEIP:"cmPrivateIp",AGENTID:"cmAgentId"}),I=Object.freeze({[e.PUBLICIP]:"Public IP",[e.PRIVATEIP]:"Private IP",[e.AGENTID]:"Agent Id"}),c=Object.freeze({[e.PUBLICIP]:"publicIp",[e.PRIVATEIP]:"privateIp",[e.AGENTID]:"agentId"});export{I as a,c as b,e as c};

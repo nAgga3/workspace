@@ -1,0 +1,40 @@
+@media only screen and (max-device-height: 600px) {   
+	body {height:580px}
+}
+body
+{
+    overflow: visible;    
+}
+.connect-parameters 
+{
+    height: auto!important;
+    padding-left: 0px;
+    width: 540px;
+}
+
+.tabContainer
+{
+    width: 520px;
+}
+.panelSlider
+{
+    overflow: visible;
+    height: auto!important;
+}
+.container {
+		min-height: 100% !important;
+		height: auto!important;
+		position: absolute;
+		top:0px;
+		bottom: 0px;
+	}
+.btntable
+{
+    margin: auto auto 35px auto !important;
+    padding: 0px 0px 10px 0px!important;
+}
+
+div.tab_content 
+{
+    height:450px;
+    }

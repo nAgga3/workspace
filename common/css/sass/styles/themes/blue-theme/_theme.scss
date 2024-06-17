@@ -1,0 +1,64 @@
+.blue-mode{
+    --primary-color: var(--light-blue-400);
+
+    --primary-bgcolor: var(--op-dark-blue-900);
+    --secondary-bgcolor: var(--op-dark-blue-800);
+    --tertiary-background: var(--dark-blue-800);
+    --header-background: var(--op-dark-blue-800);
+    --menu-background-color: var(--op-dark-blue-800);
+    --hover-background: var(--op-dark-blue-400);
+    --toolbar-bgcolor: var(--dark-blue-800);
+    
+    --blue-mode-entity-background-img: var(--gray-300);
+    
+    --border-color: var(--op-dark-blue-700);
+    --light-border-color: var(--op-dark-blue-500);
+    --separator: var(--op-dark-blue-600);
+    
+    --primary-txtcolor: var(--dark-blue-100);
+    --secondary-color-text: var(--gray-200);
+    --heading-color: var(--op-light-blue-200);
+    
+    --button-txtcolor:var(--black-500);
+    --icon-button: var(--white-500);
+    --text-hover-button: var(--white-500);
+    --button-bgcolor-h: var(--op-light-blue-600);
+    --open-button: var(--menu-background-color);
+    --switcher: var(--op-cybele-600);
+    --input-bgcolor:var(--dark-blue-800);
+    
+    --disabled: var(--cybele-300);
+    --disabled-text: var(--gray-100);
+    
+    --link-color: var(--op-dark-blue-200);
+    --link-hover-color: var(--op-dark-blue-100);
+    --menu-item-hover: var(--op-dark-blue-600);
+    --menu-selected-bgcolor: var(--primary-bgcolor);
+    --menu-selected-color: var(--primary-color);
+
+    --danger: var(--op-red-400);
+    --alert: var(--orange-300);
+    --allowed:  var(--light-green-400);
+
+    --shadow-color: #00000050;
+
+    //Analytics
+    --blue-mode-sessions-color:var(--allowed);
+    --blue-mode-connections-color:var(--primary-color);
+    --blue-mode-border-color:var(--separator);
+    --blue-mode-grid-color:var(--secondary-hover-background);
+    --blue-mode-text-color:var(--primary-txtcolor);
+
+    --scrollbar-color: var(--gray-300);
+    --scrollbar-background-color: var(--gray-100);
+    --primary-50: var(--thinfinity-50);
+    --primary-100: var(--thinfinity-100);
+    --primary-200: var(--thinfinity-200);
+    --primary-300: var(--thinfinity-300);
+    --primary-400: var(--thinfinity-400);
+    --primary-500: var(--thinfinity-500);
+    --primary-600: var(--thinfinity-600);
+    --primary-700: var(--thinfinity-700);
+    --primary-800: var(--thinfinity-800);
+    --primary-900: var(--thinfinity-900);
+}

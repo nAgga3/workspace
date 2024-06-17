@@ -1,0 +1,99 @@
+	#extkeyboard 
+	{
+	    width:320px;
+        left: 50%;
+	    margin-left: -160px;	    
+    }
+	#extkeyboard td
+	{
+	    padding-left : 0px;
+	    padding-right : 0px;
+	    padding-top : 3px;
+	    padding-bottom : 4px;
+	    font-size: 9px;	    
+	    font-weight: bold;
+	}
+	
+	#extkeyboard td p
+	{
+		margin-top:10px;
+	}	
+	
+	#extkeyboard td img
+	{
+		margin-top:0px;
+		width:50%;
+		height:50%;
+	}
+
+	div#extkeyboard div img
+	{
+		width: 18px;
+		height: 18px;
+	}	
+		
+    .t2
+    {
+	    height: 32px;
+	    width: 26px;
+    }
+    .t3 
+    {
+	    font-size: 8px;	    
+	    height: 32px;
+	    width: 39px;    
+    }
+    .t4
+    {
+	    height: 32px;
+	    width: 52px;    
+    }
+
+	div#extkeyboard div.t1, div#extkeyboard div.t2, div#extkeyboard div.t3, div#extkeyboard div.t4 
+	{
+	    text-align: center;
+	    vertical-align:middle;
+        font-family: Helvetica ;
+        font-weight: normal ;
+        -webkit-text-shadow:1px 1px 1px #fff;
+        font-size: 8px;
+        margin: 1px;
+        height: 20px!important;
+        padding-top: 5px;
+        line-height: 8px;
+	}
+    div#extkeyboard div.t2 {
+	    width: 24px;
+    }
+    div#extkeyboard div.t3 
+    {
+	    width: 38px;   
+	    font-size: 7px; 
+    }
+    div#extkeyboard div.t4
+    {
+	    width: 52px;    
+    }
+
+
+	#extkeys
+	{
+	}	
+	#extkeys p
+	{
+		margin-top:6px;
+	}
+	#extkeys td 
+	{
+		font-size:8px;
+	    padding-left : 0px;
+	    padding-right : 0.5px;
+	    padding-top : 2px;
+	    padding-bottom : 2px;
+	}
+	
+	#extkeys .t2
+	{
+		height:24px;
+		width:30px;
+	}

@@ -1,0 +1,26 @@
+body { /*height: 100% !important;*/ overflow: visible; }
+.container {
+		height: 100% !important;
+		min-height: 100% !important;
+	}
+
+.connect-parameters 
+{
+    padding-left: 0px;
+    width: 540px;
+    height: 450px;
+}
+    
+.tabContainer
+{
+    width: 520px;
+}
+#footer 
+{
+    bottom: 0px;
+}
+.btntable
+{
+    margin: auto auto 25px auto !important;
+    padding: 0px !important;
+}

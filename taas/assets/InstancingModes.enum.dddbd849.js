@@ -1,0 +1,1 @@
+const e=Object.freeze({ONDEMAND:"imOnDemand",SCHEDULED:"imScheduled",BOTH:"imBoth",FIXED:"imFixed"}),n=Object.freeze({[e.ONDEMAND]:"On Demand",[e.SCHEDULED]:"Scheduled",[e.BOTH]:"Both"}),D=Object.freeze({[e.ONDEMAND]:"onDemand",[e.SCHEDULED]:"scheduled",[e.BOTH]:"both"});export{n as a,D as b,e as i};

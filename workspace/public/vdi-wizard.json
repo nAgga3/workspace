@@ -1,0 +1,29 @@
+{
+  "templates": [
+    {
+      "id": 1,
+      "name": "Cube XS",
+      "desc": "VM with 2GB Ram."
+    },
+    {
+      "id": 2,
+      "name": "Cube S",
+      "desc": "VM with 4GB Ram."
+    },
+    {
+      "id": 3,
+      "name": "Cube M",
+      "desc": "VM with 8GB Ram."
+    },
+    {
+      "id": 4,
+      "name": "Cube L",
+      "desc": "VM with 16GB Ram."
+    },
+    {
+      "id": 5,
+      "name": "Cube XL",
+      "desc": "VM with 32GB Ram."
+    }
+  ]
+}

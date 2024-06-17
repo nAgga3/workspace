@@ -1,0 +1,112 @@
+#navControl
+{
+    position: fixed;
+    display: block;
+    width: 164px;
+    height: 123px;
+    top: 50%;
+    left: 50%;
+    margin: 0px;
+    margin-top: -59px;
+    margin-left: -80px;
+    background-color: transparent;
+    overflow:hidden;
+    }
+
+#navControl.windrose
+{
+    width: 210px;
+    height: 210px;
+    margin-top: -105px;
+    margin-left: -105px;
+    }
+
+.navCtrl_button
+{
+    opacity: .5;
+    moz-opacity: .5;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    background-image: url(<%=@BASEURL%>images/m/navigator.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    }
+
+.navCtrl_button:active
+{
+    opacity: .7;
+    moz-opacity: .7;
+    }
+
+#move_up
+{
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    margin-left: -18px;
+    background-position: -72px -36px;
+    }
+#move_down
+{
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    margin-left: -18px;
+    background-position: 0px -36px;
+    }
+#move_right
+{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    margin-top: -18px;
+    background-position: 0px 0px;
+    }
+#move_left
+{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    margin-top: -18px;
+    background-position: -36px -36px;
+    }
+#zoom_in
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: 4px;
+    background-position: -72px 0px;
+    }
+#zoom_out
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    background-position: -36px 0px;
+    }
+#zoom_shrink
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 4px;
+    margin-left: -40px;
+    background-position: -108px 0px;
+    }
+#zoom_actual
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 4px;
+    margin-left: 4px;
+    background-position: -108px -36px;
+    }

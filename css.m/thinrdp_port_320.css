@@ -1,0 +1,40 @@
+body
+{
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+}
+#credentials_popup
+{
+    top:0px;
+    margin-top:0px;
+    width: 320px;
+    margin-left: -160px;
+}
+
+#credentials_popup #title
+{
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+#credentials_popup .connect-parameters tr td:nth-child(1)
+{
+    width: 140px;
+}
+
+#credentials_popup .connect-parameters input
+{
+    width: 150px !important;
+}
+
+#credentials_popup .connectbuttons
+{
+    width: 288px;
+    border: 1px solid green:
+}
+#deskdiv
+{
+    height: 1px;
+}

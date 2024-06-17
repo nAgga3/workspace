@@ -1,0 +1,35 @@
+$colorList: (
+    thinfinity: #007dc1,
+    blue: #0030C1,
+    dark-blue: #243f6b,
+    gray:#7f7f7f,
+    white: #ffffff,
+    black: #000000,
+    red: #cb2827,
+    green: #086d40,
+    cybele: #085dac,
+    light-green: #34b44a,
+    light-blue: #54aadf,
+    purple: #32469d,
+    lilac: #aa4b9c,
+    pink: #ed2490,
+    orange: #f17c1c,
+    yellow: #f5dd08
+  );
+  
+  $scale: (900, 800, 700, 600, 500, 400, 300, 200, 100, 50);
+  $scaleValues: (-90%, -68%, -46%, -24%, 0%, 18%, 36%, 54%, 72%, 90%);
+  $scaleValuesOp: (-80%, -50%, -30%, -20%, 0%, 20%, 40%, 60%, 82%, 90%);
+
+:root {
+    @each $colorName, $colorValue in $colorList {
+        @for $i from 1 through 10 {
+            $key: #{$colorName}-#{nth($scale, $i)};
+            --#{$key} : #{scale-color(map-get($colorList, $colorName), $lightness: nth($scaleValues, $i))};
+            --op-#{$key} : #{scale-color(map-get($colorList, $colorName),
+              $saturation: -30%, $lightness:  nth($scaleValuesOp, $i))};
+        }
+    }
+  }
+
+ 

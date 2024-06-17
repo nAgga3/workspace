@@ -1,0 +1,88 @@
+.light-mode, body{
+    --font-family:"Inter";
+    --primary-color: var(--thinfinity-500);
+    --dark-primary-color: var(--thinfinity-700);
+    --light-primary-color:var(--op-thinfinity-100);
+    --secondary-color:var(--light-green-400);
+    --tertiary-color:var(--op-orange-400);
+
+    --primary-bgcolor: var(--gray-100);
+    --secondary-bgcolor: var(--white-500);
+    --tertiary-bgcolor:var(--gray-50);
+    --hover-bgcolor:var(--gray-50);
+    --header-bgcolor:var(--primary-color);
+    --toolbar-bgcolor: var(--gray-50);
+    --sidepanel-header-bgcolor:var(--header-bgcolor);
+    --sidepanel-bgcolor:var(--secondary-bgcolor);
+    --menu-bgcolor:var(--secondary-bgcolor);
+    --dialog-bgcolor:var(--secondary-bgcolor);
+    --submenu-bgcolor:var(--tertiary-bgcolor);
+    --light-mode-entity-bg:#5db3e216;
+
+    --bg-image:none;
+    --bg-size:contain;
+    --bg-blend-mode: none;
+    --header-bg-image:none;
+
+    --button-bgcolor:var(--primary-color);
+    --button-txtcolor:var(--white-500);
+    --button-bgcolor-h:var(--dark-primary-color);
+    --button-txtcolor-h:var(--white-500);
+    --outline-button-color:var(--button-bgcolor);
+    --outline-button-bgcolor-h:var(--button-bgcolor-h);
+    --outline-button-color-h:var(--button-txtcolor-h);
+    --special-button:var(--white-500);
+    --switcher-button:var(--gray-300);
+
+    --border-color: var(--gray-300);
+    --light-border-color: var(--gray-200);
+    --separator:var(--op-gray-300);
+
+    --primary-txtcolor: var(--gray-600);
+    --secondary-txtcolor:var(--gray-300);
+    --heading-color: var(--dark-primary-color);
+
+    --link-color:var(--primary-color);
+    --link-color-h:var(--op-thinfinity-300);
+    --menu-selected-color: var(--thinfinity-700);
+    --menu-selected-bgcolor: var(--op-thinfinity-100);
+
+    --input-bgcolor:var(--white-500);
+    --header-input-bgcolor:var(--secondary-bgcolor);
+    --input-txtcolor:var(--gray-600);
+    --inputpanel-bgcolor:var(--secondary-bgcolor);
+
+    --border-color:var(--gray-300);
+    --light-border-color:var(--gray-200);
+    --separator:var(--op-gray-300);
+
+    --table-header-bgcolor:var(--hover-bgcolor);
+    --table-body-bgcolor:var(--secondary-bgcolor);
+    --table-body-bgcolor-h:var(--tertiary-bgcolor);
+    
+    --disabled:var(--gray-300);
+    --danger:var(--red-400);
+    --alert:var(--orange-500);
+    --allowed:var(--light-green-400);
+    --shadow-color:#00000019;
+    --starred:var(--op-orange-300);
+
+    --desktop-logo:url("@public/productlogo-white.png");
+    --login-logo: url('<%=@BASEURL%>images/idx/productlogo.svg');
+    --mobile-logo:url("@public/Thinfinity-icon.svg");
+    --logo-bg-size:contain;
+
+    //Analytics
+    --light-mode-sessions-color: var(--secondary-color);
+    --light-mode-connections-color: var(--primary-color);
+    --light-mode-border-color: var(--white-500);
+    --light-mode-text-color: var(--gray-600);
+    --light-mode-grid-color: var(--gray-100);
+    --graf-bgcolor:var(--secondary-bgcolor);
+
+    //Bootstrap - light blue theme
+    --text-color:var(--primary-txtcolor);
+    --text-secondary-color:var(--secondary-txtcolor);
+    --primary-color-text:var(--primary-txtcolor);
+    --border-radius:.5rem;
+}

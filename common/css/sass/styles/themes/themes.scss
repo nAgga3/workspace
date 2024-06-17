@@ -1,0 +1,11 @@
+@import "colors";
+@import "light-theme/theme";
+@import "dark-theme/theme";
+@import "blue-theme/theme";
+
+.non-visible {
+  visibility: hidden;
+  background-color: transparent !important;
+  color: transparent !important;
+  border: none;
+}

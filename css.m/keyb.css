@@ -1,0 +1,205 @@
+body,div,table,td {
+    -webkit-user-select: none;
+}
+
+#touchkbd
+{
+    position:absolute;
+    z-index:0;
+    background-color: Black;
+    left : -2000px;
+    top : 0px;
+    width: 10px;
+    text-transform:lowercase;
+}
+#closequestion
+{
+    font-family: arial,helvetica;
+}
+.tbLarge
+{
+	height: 66px;
+	width: 96px;
+    line-height: 66px;
+}
+.tbMedium
+{
+    width: 64px;
+    height: 44px;
+    line-height: 44px;
+}
+.slide
+{
+    -webkit-transition: all 0.5s ease-in-out;
+}
+#extkeys
+{
+    z-index: 999;
+    background-color: #ccc;
+    color: #333;
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    text-align: center;
+    text-transform:uppercase;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+}
+#extkeys div
+{
+	text-align: center;
+	vertical-align:middle;
+    font-family: Helvetica;
+    font-weight: normal;
+    border: none;
+}
+#extkeyboard {
+    z-index: 999;
+    position: absolute;
+    font-family: helvetica;
+    color: black;
+    margin-top: 2000px;
+    top: 100%;
+    text-align: center;
+    background: #d2d6dd;
+    background: -moz-linear-gradient(top, #d2d6dd 0%, #c6cad0 100%);
+    background: -webkit-linear-gradient(top, #d2d6dd 0%,#c6cad0 100%);
+    background: linear-gradient(to bottom, #d2d6dd 0%,#c6cad0 100%);
+}
+
+div#extkeyboard {
+   	z-index: 999;
+}
+
+#extkeyboard td, #extkeyboard div
+{
+	text-align: center;
+	vertical-align:middle;
+    font-family: Helvetica ;
+    font-weight: normal ;
+    -webkit-text-shadow:1px 1px 1px #fff;
+}
+
+div#extkeyboard_row1, div#extkeyboard_row2, div#extkeyboard_row3, div#extkeyboard_row4 {
+	clear:both;
+	display: inline-block!important;
+	position: relative;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+    .key {
+        padding: 0px;
+        border: none;
+        -moz-border-radius: 8px ;
+        -webkit-border-radius: 8px ;
+        -webkit-box-shadow:0px 1px 1px #666666;
+        background-color: #ffffff;
+    }
+
+    .disabledKey {
+        background-color: #a0a0a0;
+	}
+
+
+    div.key {
+        clear:none;
+	    position:relative;
+	    float:left;
+	    margin-left:auto;
+	    margin-right:auto;
+	}
+
+    #extkeys .key {
+        padding: 0px;
+        border: none;
+        -moz-border-radius: 0px ;
+        -webkit-border-radius: 0px ;
+        -webkit-box-shadow: none;
+    }
+
+    .pressed {
+        background-color: #a0a0a0 ;
+    }
+    .selected {
+        background-color: #72b0d4 ;
+    }
+    .t2 {
+	    height: 76px;
+	    width: 78px;
+    }
+    .t3
+    {
+	    height: 76px;
+	    width: 122px;
+    }
+    .t4
+    {
+	    height: 76px;
+	    width: 164px;
+    }
+    #extkeys .t2 {
+	    height: 28px;
+	    width: 44px;
+    }
+
+    #extkeyboard td, #extkeyboard div
+	{
+	    text-align: center;
+	    vertical-align:middle;
+        font-family: Helvetica ;
+        font-weight: normal ;
+        -webkit-text-shadow:1px 1px 1px #fff;
+	}
+
+	div#extkeyboard div.t1, div#extkeyboard div.t2, div#extkeyboard div.t3, div#extkeyboard div.t4
+	{
+	    text-align: center;
+	    vertical-align:middle;
+        font-family: Helvetica;
+        font-weight: normal ;
+        -webkit-text-shadow:1px 1px 1px #fff;
+        font-size: 18px;
+        margin: 5px;
+        height: 48px;
+        padding-top: 25px;
+        display: table-cell;
+	}
+
+	div#extkeyboard div.t2
+	{
+        width: 80px;
+	}
+
+	div#extkeyboard div.t3
+	{
+        width: 126px;
+	}
+
+	div#extkeyboard div.t4
+	{
+        width: 170px;
+	}
+
+    .t2 span, .t3 span, .t4 span
+    {
+        font-size: 12px;
+        text-transform:uppercase;
+	}
+
+    .t2 span img, .t3 span img, .t4 span img
+    {
+		margin-top:20px;
+    }
+
+    div#extkeyboard div.noKey
+    {
+        visibility: hidden;
+    }
+
+    #thin-menu-container .lower-opacity,#thin-menu-pin-container .lower-opacity
+    {
+        opacity: 0.25;
+    }

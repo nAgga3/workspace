@@ -1,0 +1,115 @@
+@use 'sass:math';
+@use 'colors';
+
+:root {
+    @for $i from 1 through 5 {
+        --thinfinity-#{100 - $i * 10}: #{desaturate(lighten(colors.$thinfinity, $i * 10), $i * 20)};
+    }
+
+    --black: black;
+    --red: red;
+    --dark: #212529;
+    --dark-title: #{colors.$darktitle};
+    --dark-bg-trans: rgba(0, 0, 0, 0.30);
+    --background-color: #ffffff;
+    --background-color-2: #f9f9f9;
+    --background-color-3: #cccccc;
+    --background-color-4: #eaeaea;
+    --background-color-error: #fffee2;
+    --background-color-connection: #333333;
+    --background-color-disabled: #{colors.$lightgray};
+    --foreground-color: #{colors.$thinfinity};
+    --foreground-color-disabled: var(--background-color-3);
+    --foreground-color-cancel: #{colors.$cancel};
+    --foreground-color-cancel-hover: #{colors.$cancel_hover};
+    --foreground-color-confirm: #{colors.$confirm};
+    --foreground-color-confirm-hover: #{colors.$confirm_hover};
+    --foreground-color-warning: #{colors.$warning};
+    --foreground-color-warning-hover: #{colors.$warning_hover};
+    --foreground-color-error: #{colors.$red};
+    //--primary-color: #{colors.$thinfinity};
+    --primary-color-light: #{lighten(colors.$thinfinity, 10)};
+    --primary-color-hover: #{darken(colors.$thinfinity, 10)};
+    --primary-color-dark: #{darken(colors.$thinfinity, 20)};
+    --primary-color-disabled: #{desaturate(lighten(colors.$thinfinity, 40), 100)};
+    --primary-outline-color: #32469d;
+    --primary-text: var(--dark);
+    --border-color-0: #{colors.$lightborder};
+    --border-color-1: #eaeaea;
+    --border-color-2: #{colors.$bordergray};
+    --border-color-light: #{colors.$lightgray};
+    --border-color-3: #888888;
+    --border-color-3-light: #aaaaaa;
+    --foreground-subtitle: #{colors.$subtitle};
+    --subtitle-text: #666666;
+    --background-subtitle: #{colors.$subtitleline};
+
+    /* login */
+    --button-color: var(--thinfinity-90);
+    --active-button-color: var(--primary-color);
+    --active-input-color: var(--primary-color);
+    --inactive-input-color: #{colors.$darkgray};
+    --active-input-border-color: var(--primary-color);
+    --inactive-input-border-color: var(--border-color-2);
+    --auth-button-inactive: var(--border-color-2);
+
+    /* misc */
+    --shadow-box-color: #{colors.$shadowboxcolor};
+    --border-box-color: #{colors.$borderboxcolor};
+    --medium-shadow: #999999;
+
+    --index-element-text: #484848;
+    --tab-text-color: #A0A0A0;
+    --input-disabled: #999999;
+    --foreground-placeholder: var(--input-disabled);
+
+    --background-table-readonly: #ededed;
+    --foreground-table-readonly: var(--input-disabled);
+    --table-cell-border: #777777;
+
+    --white-overlay: rgba(255, 255, 255, .55);
+    --light-overlay: #DDDDDD;
+    --dark-overlay: rgba(20, 20, 20, 0.1);
+
+    --light-gradient-top: var(--background-color);
+    --light-gradient-bottom: #EFEFEF;
+
+    --full-gradient-top: rgba(255, 255, 255, .2);
+    --full-gradient-bottom: rgba(0, 0, 0, .2);
+
+    --hover-full-gradient-top: rgba(255, 255, 255, .3);
+    --hover-full-gradient-bottom: rgba(0, 0, 0, .3);
+
+    --active-full-gradient-top: rgba(255, 255, 255, .35);
+    --active-full-gradient-bottom: rgba(10, 10, 10, .4);
+
+    --background-neutral-button: #eeeeee;
+    --hover-background-neutral-button: #dddddd;
+    --text-shadow-light: rgba(255, 255, 255, .75);
+
+    --footer-background: #444444;
+
+    --connection-color: #666666;
+    --connection-edit: #f1efef;
+    --connection-icon: #99c99e;
+    --connection-selected: #5e64cc;
+    --connection-modified: rgba(203, 40, 39, 0.9);
+    --connection-readonly: rgba(119, 119, 119, 0.9);
+    --connection-deleted: rgba(50, 43, 43, 0.9);
+    --connection-unavailable: #c8bbbb;
+    --connection-text: #333333;
+
+    --color-enabled: rgba(32, 192, 16, .75);
+    --color-disabled: rgba(192, 0, 0, .75);
+
+    /* Transparencies */
+    @for $i from 1 through 19 {
+        --primary-trans-#{$i * 5}: rgba(#{colors.$thinfinity-open, $i * .05});
+    }
+
+    --background-trans-1: rgba(255, 255, 255, 0.01);
+    @for $i from 1 through 5 {
+        --background-trans-#{$i * 10}: rgba(255, 255, 255, #{$i * .1});
+    }
+
+}

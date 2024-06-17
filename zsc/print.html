@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta name="thinfinity-header" data-name="Content-Security-Policy" data-value="frame-ancestors 'self'; default-src 'none'; frame-src 'self';  script-src 'self' 'unsafe-eval' blob:;form-action 'self'; style-src 'self' 'unsafe-inline';base-uri 'self'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'none'; connect-src 'self'; media-src 'self' data:;" />
+	<meta name="thinfinity-header" data-name="X-Content-Type-Options" data-value="nosniff" />
+	<meta name="thinfinity-header" data-name="X-XSS-Protection" data-value="1; mode=block" />
+    <title>z/Scope Print Screen</title>
+    <style>
+        @media print {
+            @page {
+                size: 8.5in 11in landscape;
+            }
+
+            header:after {
+                content: "#title#";
+            }
+        }
+
+        img {
+            width: 10.5in !important;
+            max-width: 10.5in !important;
+        }
+
+        html, body, div {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+    <!-- Thinfinity.JSMinified name="print" combine="no" compress="no" -->
+    <script src="<%=@BASEURL%>common/js/agentinfo.js" type="text/javascript"></script>
+    <script src="<%=@BASEURL%>js/print.js"></script>
+</head>
+<body>
+    <div>
+        <img id="screenImg"/>
+    </div>
+</body>
+</html>

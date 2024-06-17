@@ -1,0 +1,95 @@
+	#extkeyboard 
+	{
+	    font-size: 18px;
+ 	    width: 800px; 
+ 	    left: 50%;
+	    margin-left: -400px; 	 
+    }
+	#extkeyboard td 
+	{
+	    padding-left : 1px;
+	    padding-right : 1px;
+	    padding-top : 3px;
+	    padding-bottom : 3px;
+	}
+	#extkeyboard p
+	{
+		margin-top:22px;
+	}
+    .t2
+    {
+	    height: 65px;
+	    width: 65px;
+    }
+    .t3 
+    {
+	    height: 65px;
+	    width: 100px;    
+    }
+    .t4
+    {
+	    height: 65px;
+	    width: 120px;    
+    }
+    #extkeys
+    {
+		font-size:14px;
+	}
+	#extkeys td
+	{
+	    padding-left : 2px;
+	    padding-right : 2px;
+	    padding-top : 2px;
+	    padding-bottom : 2px;
+	}
+    #extkeys .t2
+    {
+	    height: 28px;
+	    width: 40px;
+    }
+    #extkeys p 
+    {
+	    margin-top: 8px;
+    }    
+    
+   	#preferences  div fieldset label, #preferences  div fieldset input, #preferences  div,	#preferences label, #prefbuttons span
+	{
+		font-size:14px;	
+	}
+
+	#preferences label span, #prefbuttons span
+	{
+		margin:5px;
+		padding:5px;
+	}
+
+	#pcconnection label, #pcconnection input
+	{
+		margin-top:20px;
+	}
+	
+	
+	#pcconnection div fieldset input
+	{
+		width:500px;
+	}
+	
+	#pcconnection label, #preferences  div fieldset div.ui-controlgroup-label
+	{
+		width:100px;
+	}
+	
+	 #preferences  div fieldset div div.ui-radio label
+	{
+		width:150px;
+	}
+	
+	#preferences  div fieldset
+	{
+		margin:20px;
+	}	
+
+	#prefbuttons div
+	{
+		margin-top:20px;
+	}

@@ -1,0 +1,52 @@
+.component-resize-panel,
+.component-panel {
+    width:100%;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    position:absolute;
+    display:block;
+    margin:0px;
+    padding:0px;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+}
+    .component-resize-panel.show, .component-panel.show  {
+         display:inline-block;
+    }
+    .component-resize-panel.hidden ,.component-panel.hidden {
+        display:none;
+    }
+
+    .component-panel .component-caption {
+        width:100%;
+        height:24px;
+        display:block;
+        top:0px;
+        position:relative;
+
+        background-color:lime;
+    }
+    .component-panel .component-body {
+        width:100%;
+        height:auto;
+        display:block;
+        position:relative;
+
+        background-color:orange;
+    }
+    .component-panel .component-footer {
+        width:100%;
+        height:80px;
+        display:block;
+        position:relative;
+        bottom:0px;
+        margin-bottom:0px;
+
+        background-color:violet;
+    }
+        .component-panel .component-footer .component-button {
+
+        }

@@ -1,0 +1,41 @@
+.jsPanel-theme-default>.jsPanel-hdr * {
+    color: inherit;
+    min-height: 14px;
+    line-height: 14px;
+    font-size: 10pt;
+}
+.jsPanel-titlebar h3 {
+    color: inherit;
+    font-family: Verdana, Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: inherit;
+    font-variant: normal;
+    font-weight: normal;
+    margin: 6px 5px 6px 8px;
+}
+.jsPanel-controlbar .jsPanel-btn {
+    padding: 5px;
+}
+/* ------------------------------------- */
+.jsPanel-theme-default.mini>.jsPanel-hdr * {
+    color: inherit;
+    height: 11pt;
+    line-height: 11pt;
+    font-size: 8pt;
+}
+.jsPanel-theme-default.mini>.jsPanel-hdr .jsPanel-titlebar h3 {
+    color: inherit;
+    font-family: Verdana, Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: inherit;
+    font-variant: normal;
+    font-weight: normal;
+    margin: 1pt 5px 1pt 8px;
+}
+.jsPanel-theme-default.mini>.jsPanel-hdr .jsPanel-controlbar .jsPanel-btn {
+    padding: 2pt;
+}
