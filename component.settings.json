@@ -1,0 +1,55 @@
+{
+  "usb": {
+    "scrapers": [ "RDP" ],
+    "files": [
+      {
+        "isConstructor": true,
+        "url": "/rdp/components/thinfinity.components.usb.js",
+        "compress": true,
+        "combine": true,
+        "required": []
+      }
+    ]
+  },
+  "camera": {
+    "scrapers": [ "RDP" ],
+    "files": [
+      {
+        "isConstructor": true,
+        "url": "./rdp/components/thinfinity.components.camera.js",
+        "compress": true,
+        "combine": true
+      }
+    ],
+    "settings": {
+      "format": {
+        "width": 800,
+        "height": 600,
+        "fps": 24
+      }
+    }
+  },
+  "microphone": {
+    "scrapers": [ "RDP" ],
+    "files": [
+      {
+        "isConstructor": true,
+        "url": "./rdp/components/thinfinity.components.microphone.js",
+        "compress": true,
+        "combine": true,
+        "required": [
+          {
+            "url": "./rdp/components/imaadpcm.js",
+            "name": "pcm"
+          }
+        ]
+      },
+      {
+        "name": "worklet",
+        "url": "./rdp/components/input.audio.processor.worklet.js",
+        "compress": true,
+        "combine": false
+      }
+    ]
+  }
+}

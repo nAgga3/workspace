@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title><%=$LICPROD%></title>
+<link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/oturltest.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/template.colors.min.css" />
+<script type="text/javascript" src="common/js/global.variables.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>oturl.test.min.js"></script>
+
+</head>
+<body>
+    <div class="main">
+        <table>
+            <tr><th class="header" colspan="3">Mandatory Parameters</th></tr>
+            <tr><th>Server:</th><td colspan="2"><input type="text" id="server" size="50" placeholder="Please, enter the server url" value="" /></td></tr>
+            <tr><th>APIKey:</th><td colspan="2"><input type="text" id="apikey" size="50" placeholder="Please, enter the <%=$LICPROD%> API key value" value="" /></td></tr>
+            <tr><th>Profile/Model Access Key:</th><td colspan="2"><input type="text" id="model" size="50" placeholder="Please, enter the Connection Profile access key" value="" /></td></tr>
+            <tr><th>Profile Virtual Path:</th><td colspan="2"><input type="text" id="virtualPath" size="50" placeholder="Enter the Profile Virtual Path instead of Access Key" value="" /></td></tr>
+            <tr><th>Name:</th><td colspan="2"><input type="text" id="connectionName" size="50" placeholder="Connection name to display on browser window" value="" /></td></tr>
+            <tr><th class="header" colspan="3">Additional Parameters</th></tr>
+            <tr>
+                <th>Password length:</th>
+                <td><input type="number" id="passlen" value="8" /></td>
+                <td>Password length, in characters.</td>
+            </tr>
+            <tr>
+                <th>Expiration</th>
+                <td><input type="number" id="expiration" value="30" /></td>
+                <td>Expiration time, in minutes.</td>
+            </tr>
+            <tr><th class="header" colspan="3">Additional Custom Parameters</th></tr>
+            <tr>
+                <th>createToolbar</th>
+                <td><select id="createToolbar"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>Creates the <%=$LICPROD%>'s toolbar.</td>
+            </tr>
+            <tr>
+                <th>toolbarVisible</th>
+                <td><select id="toolbarVisible"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>Starts connection with the toolbar visible.</td>
+            </tr>
+            <tr>
+                <th>permissions.expandToolbar</th>
+                <td><select id="permissions_expandToolbar"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>Allows start connection with the toolbar expanded.</td>
+            </tr>
+            <tr>
+                <th>permissions.showFileTransfer</th>
+                <td><select id="permissions_showFileTransfer"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>Enables/disables file transfer option.</td>
+            </tr>
+            <tr>
+                <th>disableDisconnect</th>
+                <td><select id="disableDisconnect"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>Enables/disables disconnect option.</td>
+            </tr>
+            <tr>
+                <th>checkBeforeWindowClose</th>
+                <td><select id="checkBeforeWindowClose"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>When false, it skips the user confirmation popup of the onBeforeUnload event.</td>
+            </tr>
+            <tr>
+                <th>noSsnDialog</th>
+                <td><select id="noSsnDialog"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>Avoids the share session popup dialog.</td>
+            </tr>
+            <tr>
+                <th>noShowConnectionClosePopup</th>
+                <td><select id="noShowConnectionClosePopup"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>When true, it skips the session closed message popup.</td>
+            </tr>
+            <tr>
+                <th>noShowConnectionDisconnectPopup</th>
+                <td><select id="noShowConnectionDisconnectPopup"><option value="none">Default</option><option value="true">True</option><option value="false">False</option></select></td>
+                <td>When set to true, the 'Connection Disconnect' message popup will be skipped.	</td>
+            </tr>
+            <tr>
+                <td class="footer" colspan="2"><input type="button" id="btnGenerateOTURL" onclick="generateOTURL()" value="GENERATE" /></td>
+                <td class="footer" colspan="1"><input type="button" id="btnConnectToOTURL" value="CONNECT" /></td>
+            </tr>
+            <tr><td class="footer" colspan="3"><input type="text" id="txtOtUrl" value="" /></td></tr>
+        </table>
+    </div>
+</body>
+</html>

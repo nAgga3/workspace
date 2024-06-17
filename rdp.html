@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="thinfinity-postdata" data-name="data" data-value='<%=data%>' />
+    <title><%=$LICPROD%></title>
+    <link rel="apple-touch-icon" href="<%=@BASEURL%>images/icon.png" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/thinfinity-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/template.colors.min.css" />
+<link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/rdp.min.css"/>
+
+
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/custom.connection.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>font/icons-new/css/cybele-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>__themes__/custom-theme.css">
+
+<script type="text/javascript" src="<%=@BASEURL%>flsenv.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>common/jquery/jquery.js"></script>
+<script type="text/javascript" src="common/js/global.variables.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>__base__/config/websettings"></script>
+<script type="text/javascript" src="<%=@BASEURL%>rdp.consts.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>rdp.min.js"></script>
+
+
+
+
+    <!-- AUDIO DRIVERS -->
+
+    <!-- MONITOR CONTROLLER -->
+    <!-- MONITOR MANAGER -->
+    <!-- MONITOR MANAGER -->
+    <!-- MONITOR CONTROLLER -->
+<script type="text/javascript" src="<%=@BASEURL%>rdp/js/rdp.js"></script>
+</head>
+<body class="connPage non-visible">
+    <div id="deskdiv" class="render-container">
+    </div>
+    <!-- credentials dialog -->
+    <div id="credentialsDialog" class="dialog absoluteCenter hidden">
+        <form method="post">
+            <div class="header">Enter Credentials to Sign in </div>
+            <div class="body">
+                <div class="table visible">
+                    <input type="hidden" id="publickey" />
+                    <div class="row">
+                        <div class="cell label">Username:</div>
+                        <div class="cell data">
+                            <input type="text" data-qatest="authusername_field" name="authusername" id="authusername" class="inputFullWidth" autocomplete="on" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell label">Password:</div>
+                        <div class="cell data"><input type="password" data-qatest="authpassword_field" name="" id="authpassword" class="inputFullWidth" autocomplete="auth-password" /></div>
+                    </div>
+                    <div class="row" id="saveCredRow">
+                        <div class="cell label">&nbsp;</div>
+                        <div class="cell data"><input type="checkbox" name="saveCredentials" id="saveCredentials" /><label for="saveCredentials" class="relativeLabel">Save Credentials</label></div>
+                    </div>
+                </div>
+                <div id="authErrMessage" class="message hidden"></div>
+            </div>
+            <div class="footer right">
+                <div class="button selected" id="signInBtn" tabindex="0">
+                    <div class="icon fa thin-arrow-right"></div><div>Sign In</div>
+                </div>
+                <div class="button" id="cancelSingInBtn" tabindex="0">
+                    <div class="icon fa thin-cancel"></div><div>Cancel</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- credentials dialog -->
+    <div id="printScreenPreviewPopup" class="popup rmv hidden" tabindex="0">
+        <div class="header center">
+            <h3>Print Screen Preview</h3>
+        </div>
+        <div class="alertBody printBody">
+            <div class="subtitle">Please, select a print mode</div>
+            <div class="pspscreenshot pspBlackAndWhite"></div>
+            <div class="pspscreenshot pspInvertedGrayScaled"></div><br />
+            <div class="pspscreenshot pspGrayScaled"></div>
+            <div class="pspscreenshot pspFullColor"></div>
+        </div>
+        <div class="divbuttons">
+            <a class="popuplink popuplink selected btnPrintScreenPreview">
+                <div>Print</div>
+            </a>
+            <a class="popuplink btnCloseScreenPreview">
+                <div>Cancel</div>
+            </a>
+        </div>
+    </div>
+    <!--Print Template Popup -->
+    <div id="printGrowUIDialog" class="growlUI hidden">
+        <span class="title">Preparing document, please wait.</span>
+        <div id="printGrowUIOptions1" class="printGrowUIOptions">
+            <span class="msg">Bypass preview dialog</span>
+            <div id="printGrowUIbtnActive" class="option active" title="Bypass Print Preview Dialog">ON</div>
+            <div id="printGrowUIbtnInactive" class="option inactive" title="Do not bypass Print Preview Dialog">OFF</div>
+        </div>
+    </div>
+    <div id="printGrowUIErrorDialog" class="growlUI growlUIError hidden">
+        <span class="title">Print error.</span>
+        <div id="printGrowUIOptions2" class="printGrowUIOptions">
+            <span class="msg">Cannot print current document, please try again.</span>
+        </div>
+    </div>
+    <div id="printDialogPreviewContainer" class="center systemPopup systemDlg hidden">
+        <span id="" class="title">Preview</span>
+        <div id="printDialogBodyContainer" class="bodyContainer">
+            <!--if ((agentInfo.isIOS == true) && (agentInfo.isSafari == true)) {-->
+            <div id="printDialogIFrameContainer">
+                <iframe id="printDialogFileContainer" frameborder="0" allowtransparency="allowtransparency"></iframe>
+            </div>
+            <div id="printDialogPDFNotSupported">
+                <div id="printDialogSupportReader">
+                    <img id="imgAdobe" class="adobe" />
+                    <br />
+                    <a target="_blank" href="http://get.adobe.com/reader/">Get Adobe Reader</a>
+                </div>
+                <div id="printDialogNotSupportReader">
+                    <img class="generic" />
+                    <br />
+                    <span>Preview is not supported.</span>
+                </div>
+            </div>
+
+        </div>
+        <div id="printDialogFooterContainer">
+            <div id="printDialogModeContainer" class="radioContainer">
+                <input id="printDialogDirect" type="radio" name="printMode" checked="checked" />
+                <span id="printDialogDirectLabel">Direct Print</span>
+            </div>
+
+            <div class="buttonsContainer">
+                <input type="button" id="printDialogBtnCancel" class="button" value="Cancel" />
+                <input type="button" id="printDialogBtnOk" class="button" value="OK" />
+                <input type="button" id="printDialogBtnClose" class="button" value="Close" />
+                <input type="button" id="printDialogBtnPrint" class="button" value="Print" />
+            </div>
+
+            <div class="footer">
+                <input type="checkbox" id="printDialogPrintMethod" />
+                <label for="printDialogPrintMethod" id="printDialogPrintMethodLabel">Bypass this dialog (you can change this option later)</label>
+            </div>
+        </div>
+    </div>
+    <!--Print Template Popup -->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%=$LICPROD%> - File Transfer Manager</title>
+    <link rel="icon" href="<%=@BASEURL%>favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>themes/thin/fileman.min.css" />
+    <!-- Always set width and height for html and body if you would like to set width and height for Ajax File Browser control to 100% -->
+    <style type="text/css">
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        #ithit_interface_content_container_0 {
+            position: absolute !important;
+        }
+    </style>
+
+<script type="text/javascript" src="<%=@BASEURL%>__base__/config/websettings"></script>
+<script type="text/javascript" src="<%=@BASEURL%>js/fileman-consts.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>fileman.min.js"></script>
+</head>
+<body class="ih_style">
+    <div id="AjaxFileBrowserContainer" style="width: 100%; height: 100%"></div>
+</body>
+</html>

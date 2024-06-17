@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title><%=$LICPROD%> - One-time password</title>
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/thinfinity-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/template.colors.min.css" />
+    <link href="<%=@BASEURL%>common/plugin/totp/css/totp.css" rel="stylesheet" />
+<script type="text/javascript" src="common/js/global.variables.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>totp.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="<%=@BASEURL%>images/idx/productlogo.svg" class="logo" alt="" />
+        </div>
+    </div>
+    <div class="float-container">
+        <div class="tfaauth-container" id="tfaauth-main-container">
+            <div id="tfa-code" class="background-panel">
+                <h2 class="label" id="subtitle">Second-step code verification</h2>
+                <div id="tfa_setup_container" class="tfaauth-panel vmiddle">
+                    <div class="tfa_setup center">
+                        <span class="bold">Set up your Second-step Code Generator app</span>
+                        <div class="tfa_qrcode">
+                            <div id="tfa_qrcode"></div>
+                            <div id="setup-issuer-container">
+                                <span class="tfa_issuer_label">Issuer: <span class="tfa_issuer"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tfa_instructions_container" class="tfaauth-panel vmiddle">
+                    <div class="tfa_instructions center">
+                        <span class="bold">Open the Second-step Code Generator app</span>
+                        <div class="tfa_img">
+                            <img src="<%=@BASEURL%>common/plugin/totp/css/totp.png" />
+                        </div>
+                        <div id="instructions-issuer-container">
+                            <span class="tfa_issuer_label">Issuer: <span class="tfa_issuer"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="separator" class="separator vmiddle"><span>&nbsp;</span><span id="prev"></span><span id="post"></span></div>
+                <div id="enter-code-page" class="tfaauth-panel vmiddle">
+                    <form id="tfa_form" class="tfa_form" method="post">
+                        <span class="bold">Enter the verification code:</span>
+                        <div class="tfa_form center">
+                            <div class="row">
+                                <input tabindex="1" type="text" name="code" id="code" placeholder="Code" autofocus="autofocus" required=required autocomplete="off" />
+                                <div id="locked-input-progress-container">
+                                    <div id="locked-input-progress"></div>
+                                </div>
+                                <h2 class="label" id="message"></h2>
+                            </div>
+                            <div class="row">
+                                <button tabindex="2" type="submit" class="button continuebtn" id="btnContinue">
+                                    <div class="imgcont thin-arrow-right"></div>
+                                    <div class="labelbtn" id="loginLbl">Continue</div>
+                                </button>
+                                <button tabindex="3" class="button continuebtn" type="button" id="btnCancel">
+                                    <div class="imgcont thin-back"></div>
+                                    <div class="labelbtn" id="loginLbl">Back</div>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <span class="label-link show-recovery-options-label" id="show_recovery_options_button">I don't have access to my authentication device</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="tfa-recovery-options" class="background-panel">
+                <h2 class="label" id="subtitle">2FA Authentication</h2>
+                <div id="tfa_recovery_instructions" class="tfaauth-panel vmiddle">
+                    <div class="tfa_recovery_instructions center">
+                        <div class="row">
+                            <span class="tfa-recovery-instructions">
+                                To change your 2nd-Step Code Generator device please contact the system administrator to reset
+                                the 2FA Authentication key for your user ID.
+                            </span>
+                            <input readonly="readonly" id="two_factor_recovery_username" class="tfa-recovery-username" />
+                        </div>
+                        <div class="row">
+                            <span id="recovery_instructions_back" class="label-link">Go Back</span> | <span id="recovery_instructions_close" class="label-link">Close</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

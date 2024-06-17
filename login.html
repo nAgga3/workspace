@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="thinfinity-postdata" data-name="totp" data-value='<%=#totpauthentication%>' />
+    <title><%=$LICPROD%></title>
+    <link rel="preload" href="<%=@BASEURL%>__base__/config/themes" as="fetch" type="application/json">
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/template.colors.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>font/icons-new/css/cybele-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/thinfinity-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/oauth2.min.css" />
+<link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/login.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/custom.login.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>__themes__/custom-theme.css">
+    <link rel="icon" href="<%=@BASEURL%>favicon.ico" />
+    <link rel="apple-touch-icon" href="<%=@BASEURL%>images/icon.png" />
+<script type="text/javascript" src="<%=@BASEURL%>common/jquery/jquery.js"></script>
+<script type="text/javascript" src="common/js/global.variables.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>__base__/config/websettings"></script>
+<script type="text/javascript" src="<%=@BASEURL%>rdp.consts.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>login.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>js/login.js"></script>
+</head>
+
+
+<body class="">
+    <div id="app" style="height: 100vh;">
+        <main-app></main-app>
+    </div>
+
+    <template id="main-app">
+        <div class="main-container">
+            <div class="background"><div class="isologo"></div></div>
+            <div id="authPane" v-if="allowAnonymous">
+                <span class="action" data-qatest="cancelbutton_field" id="btnCancel" @click="cancelLogin()">Cancel</span>
+            </div>
+            <div class="section-box">
+                <transition name="fade" mode="out-in">
+                    <keep-alive :include="['LoginBox']">
+                        <component
+                            ref="currentView"
+                            :is="kaComponent"
+                            @credentials-expired="onCredentialsExpired"
+                            @radius-challenge="onRadiusChallenge"
+                            @radius-challenge-login-failed="onRadiusChallengeLoginFailed"
+                            @switch-mode="onSwitchMode"
+                            v-bind="{...props.radiusChallenge, ...props.changePassword, ...props.login}"
+                            ></component>
+                    </keep-alive>
+                </transition>
+            </div>
+            <div class="footer">
+                <small><span class="hiddenThin"><%=$LICPROD%> v<%=$VERSION%>. </span>All Rights Reserved &copy; 2010-2024 by <a href="https://www.cybelesoft.com" target="_blank">Cybele Software, Inc.</a></small>
+            </div>
+        </div>
+    </template>
+    <template id="login-box">
+        <div v-if="!(methods.received && themeApplied)">
+            <div class="wait">
+                <span>Loading...</span>
+            </div>
+        </div>
+        <div v-else>
+            <div class="header">
+                <div class="logo bg-logo">
+                    <div class="logo-img bg-logo"></div>
+                </div>
+            </div>
+            <div class="texthead" v-if="methods.internal.length > 0">Enter your credentials</div>
+            <div class="body" v-if="!(methods.internal.length == 0 && methods.oauth.length > 0)">
+                <div class="inner">
+                    <div v-if="methods.internal.length == 0 && methods.oauth.length == 0 && methods.received" class="title centered">
+                        <span>No login methods available.</span>
+                    </div>
+                    <!--transition name="fade" mode="out-in"-->
+                    <form v-if="methods.received" class="fieldset" @submit.prevent="onSubmit">
+                        <input v-if="methods.internal.length > 0" autofocus="autofocus" autocomplete="username" data-qatest="username_field" id="username" ref="username" name="username" v-model="username" type="text" placeholder="Username" />
+                        <div v-if="methods.internal.length > 0" class="combined-input">
+                            <input id="password" data-qatest="password_field" name="password" autocomplete="current-password" :type="passwordFieldType" v-model="password" placeholder="Password" />
+                            <i @click="showHidePassword" class="input-icon" :class="passwordEyeClass"></i>
+                            <!-- <span class="fg-color small-label floating">Forgot your password?</span> -->
+                        </div>
+                        <select v-if="methods.internal.length > 1" v-model="method" data-qatest="loginmethods_select">
+                            <option v-for="method in methods.internal" :value="method.name">
+                                Use {{method.name}}
+                            </option>
+                        </select>
+                        <div v-if="isSMB" class="checkOption">
+                            <input type="checkbox" id="bypassConfig" v-model="bypassConfig" />
+                            <label for="bypassConfig">Bypass configuration</label>
+                        </div>
+                        <div v-if="methods.internal.length > 0" class="combined-input">
+                            <button id="btnlogin" name="btnlogin" data-qatest="loginbutton_field" type="submit" class="btn btn-primary">Sign in</button>
+                            <span class="error-message floating">
+                                <transition name="fade" mode="out-in">
+                                    <span data-qatest="messageerror_field" name="message" type="error" v-if="error_message">{{error_message}}</span>
+                                </transition>
+                            </span>
+                        </div>
+                    </form>
+                    <!--/transition-->
+                </div>
+            </div>
+            <div class="footer">
+                <div v-if="methods.oauth.length > 0 && methods.internal.length > 0" class="hseparator"><hr /><span>or</span></div>
+                <div v-if="methods.oauth.length == 1 ||  methods.internal.length == 0"
+                        :class="{ 'with-margin': methods.internal.length == 0}">
+                    <button v-for="method in methods.oauth" @click="onAuthMethodClick(method)" :data-qatest="'login-' + method.name+'_field'"
+                            class="btn fullwidth auth-block-button" :class="['method-' + method.id + ' thin-' + method.id ]">
+                        Sign in with {{method.name}}
+                    </button>
+                </div>
+                <div v-if="methods.oauth.length > 1 && methods.internal.length > 0 " class="auth-list">
+                    <div class="auth-list-row" ref="methodContainer">
+                        <div @click="onAuthMethodClick(method)" v-for="method in methods.oauth" :data-methodId="method.id" class="auth-circle" :class="[ 'method-' + method.id ]"
+                                :title="'Sign in with ' + method.name" :data-qatest="'login-' + method.name+'_field'">
+                            <div class="inner">
+                                <i class="icon" :class="[ 'thin-' + method.id ]">{{method.initials}}</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="(methods.internal.length == 0) && error_message" class="combined-input">
+                    <span class="error-message floating">
+                        <transition name="fade" mode="out-in">
+                            <span data-qatest="messageerror_field" name="message" type="error">{{error_message}}</span>
+                        </transition>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="changepassword-box">
+        <div>
+            <div class="header">
+                <div class="logo bg-logo">
+                    <div class="logo-img bg-logo"></div>
+                </div>
+            </div>
+            <div class="texthead">Password change required</div>
+            <div class="body">
+                <div class="inner">
+                    <form class="fieldset" @submit.prevent="onSubmit">
+                        <input class="hidden" id="change_username" name="change_username" type="text" autocomplete="username" name="username" v-model="username" />
+                        <div class="icon-input first-child">
+                            <input id="change_oldpassword" name="change_oldpassword" autocomplete="current-password" :type="passwordFieldType[0].type" ref="oldpassword" v-model="old_password" placeholder="Old password" />
+                            <i @click="showHidePassword(0)" class="input-icon" :class="passwordEyeClass(0)"></i>
+                        </div>
+                        <div class="icon-input">
+                            <input id="change_newpassword1" name="change_newpassword1" autocomplete="new-password" :type="passwordFieldType[1].type" v-model="password" placeholder="New password" />
+                            <i @click="showHidePassword(1)" class="input-icon" :class="passwordEyeClass(1)"></i>
+                        </div>
+                        <div class="icon-input">
+                            <input id="change_newpassword2" name="change_newpassword2" autocomplete="new-password" :type="passwordFieldType[2].type" v-model="confirm_password" placeholder="Confirm new password" />
+                            <i @click="showHidePassword(2)" class="input-icon" :class="passwordEyeClass(2)"></i>
+                        </div>
+                        <div class="combined-input">
+                            <button id="change_btnpwd" name="change_btnpwd" type="submit" class="btn btn-primary">Change Password</button>
+                            <span class="error-message floating">
+                                <transition name="fade" mode="out-in">
+                                    <span v-if="error_message">{{error_message}}</span>
+                                </transition>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+            </div>
+        </div>
+    </template>
+
+    <template id="radius-challenge-box">
+        <div>
+            <button id="cancel" name="cancel" @click.prevent="onCancel"  class="go-back-radius" ><i class="icon cyb-arrow-left"></i> Back</button>
+            <div class="header">
+                <div class="logo bg-logo">
+                    <div class="logo-img bg-logo"></div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="inner">
+                    <form class="fieldset" @submit.prevent="onSubmit">
+                        <!--<input class="hidden" id="change_username" name="change_username" type="text" autocomplete="username" name="username" v-model="username" />-->
+                        <div class="icon-input first-child">
+                            <label id="question" name="question">{{fields.question}}</label>
+                        </div>
+                        <div class="icon-input first-child">
+                            <input autofocus="autofocus" ref="answerField" id="answer" name="answer" v-model="answer" />
+                        </div>
+                        <div class="combined-input">
+                            <button id="sendAnswer" name="sendAnswer" type="submit" class="btn btn-primary">Submit</button>
+                            <span class="error-message floating">
+                                <transition name="fade" mode="out-in">
+                                    <span v-if="error_message">{{error_message}}</span>
+                                </transition>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+            </div>
+        </div>
+    </template>
+
+    <template id="two-factor-box">
+    </template>
+</body>
+
+</html>

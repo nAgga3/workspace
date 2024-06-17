@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title><%=$LICPROD%></title>
+<script type="text/javascript" src="<%=@BASEURL%>common/jquery/jquery.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>ssurl.test.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>js/ssurl.test.js"></script>
+</head>
+<body style="margin:0;overflow:hidden">
+    <br /><br />
+    <center>
+        <table>
+            <tr><td>APIKey:</td><td><input type="text" id="apikey" value="" /></td></tr>
+            <tr><td>Model:</td><td><input type="text" id="model" value="" /></td></tr>
+            <tr><td>&nbsp;</td><td><input type="button" id="btnGetOtURL"  value="Get OtURL" /></td></tr>
+            <tr><td>Url:</td><td><a href="" id="oturl" target="_blank" /></td></tr>
+            <tr><td>&nbsp;</td><td><input type="button" id="btnGetGAK"  value="Get Gak" /></td></tr>
+            <tr><td>Gak:</td><td><input type="text" id="gak" value="" /></td></tr>
+            <tr><td>&nbsp;</td><td><input type="button" id="btnGetSSN" value="Get SSN" /><input type="checkbox" id="viewonly" />view-only</td></tr>
+            <tr><td>SSN:</td><td><a href="" id="ssn" target="_blank" /></td></tr>
+        </table>
+    </center>
+</body>
+</html>

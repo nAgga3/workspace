@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="thinfinity-postdata" data-name="data" data-value='<%=data%>' />
+    <title>Thinfinity Remote Workspace</title>
+    <link rel="apple-touch-icon" href="<%=@BASEURL%>images/icon.png" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/thinfinity-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/template.colors.min.css" />
+<link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/rfb.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/custom.connection.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>font/icons-new/css/cybele-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>__themes__/custom-theme.css">
+
+<script type="text/javascript" src="<%=@BASEURL%>common/jquery/jquery.js"></script>
+<script type="text/javascript" src="common/js/global.variables.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>__base__/config/websettings"></script>
+<script type="text/javascript" src="<%=@BASEURL%>rfb.consts.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>rfb.min.js"></script>
+
+
+
+<script type="text/javascript" src="<%=@BASEURL%>rfb/js/rfb.js"></script>
+</head>
+<body class="connPage non-visible">
+    <div id="deskdiv" class="hidden" class="render-container"></div>
+    <!-- credentials dialog -->
+    <div id="credentialsDialog" class="dialog absoluteCenter hidden">
+        <form method="post">
+            <div class="header">Enter Credentials to Sign in </div>
+            <div class="body">
+                <div class="table visible">
+                    <input type="hidden" id="publickey" />
+                    <div class="row">
+                        <div class="cell label">Password:</div>
+                        <div class="cell data"><input type="password" name="" id="authpassword" class="inputFullWidth" autocomplete="rfb-password" /></div>
+                    </div>
+                </div>
+                <div id="authErrMessage" class="message hidden"></div>
+            </div>
+            <div class="footer right">
+                <div class="button selected" id="signInBtn" tabindex="0">
+                    <div class="icon fa thin-arrow-right"></div><div>Sign In</div>
+                </div>
+                <div class="button" id="cancelSingInBtn" tabindex="0">
+                    <div class="icon fa thin-cancel"></div><div>Cancel</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- credentials dialog -->
+    <div id="printScreenPreviewPopup" class="popup rmv hidden" tabindex="0">
+        <div class="header center">
+            <h3>Print Screen Preview</h3>
+        </div>
+        <div class="alertBody printBody">
+            <div class="subtitle">Please, select a print mode</div>
+            <div class="pspscreenshot pspBlackAndWhite"></div>
+            <div class="pspscreenshot pspInvertedGrayScaled"></div><br />
+            <div class="pspscreenshot pspGrayScaled"></div>
+            <div class="pspscreenshot pspFullColor"></div>
+        </div>
+        <div class="divbuttons">
+            <a class="popuplink popuplink selected btnPrintScreenPreview">
+                <div>Print</div>
+            </a>
+            <a class="popuplink btnCloseScreenPreview">
+                <div>Cancel</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

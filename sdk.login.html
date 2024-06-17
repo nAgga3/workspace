@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title><%=$LICPROD%> - Login</title>
+    <link rel="apple-touch-icon" href="<%=@BASEURL%>images/icon.png" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/thinfinity-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/template.colors.min.css" />
+<link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/sdk.login.min.css"/>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+<script type="text/javascript" src="<%=@BASEURL%>common/jquery/jquery.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>rdp.consts.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>sdk.login.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>js/sdk.login.js"></script>
+</head>
+<body style="margin:0;overflow:hidden">
+    <div class="header">
+        <img src="<%=@BASEURL%>images/idx/productlogo.svg" class="logo" alt="" />
+        <div id="btnlogout" style="display:none"><span>Logout</span></div>
+    </div>
+    <!----- login page content ---->
+    <div id="login-page" style="display:block;">
+        <div class="row">
+            <h2 id="credTitleSpan" class="negative">Enter your credentials</h2>
+        </div>
+        <div class="row">
+            <label for="userid">Username:</label>
+            <input type="text" name="username" id="userid" />
+        </div>
+        <div class="row">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="" autocomplete="Password"/>
+        </div>
+        <div class="btnPane">
+            <div class="button trdpbtn" id="loginOk">
+                <div class="trdpbtnimg" id="loginImg">&nbsp;</div>
+                <div id="loginLbl">login</div>
+            </div>
+        </div>
+    </div>
+    <!----- change password page content ---->
+    <div id="changePassword-page" style="display:none;">
+        <div class="row">
+            <h2 id="credTitleSpan" class="negative">You must change your password</h2>
+        </div>
+        <div class="row">
+            <label for="userid">Username:</label>
+            <input type="text" name="username" id="userid2" readonly="readonly" />
+        </div>
+        <div class="row">
+            <label for="password">Old Password:</label>
+            <input type="password" name="password" id="oldPassword" value="" autocomplete="Old-password"/>
+        </div>
+        <div class="row">
+            <label for="password">New Password:</label>
+            <input type="password" name="password" id="newPassword" value="" autocomplete="New-password"/>
+        </div>
+        <div class="row">
+            <label for="password">Confirm Password:</label>
+            <input type="password" name="password" id="cnfPassword" value="" autocomplete="Confirm-password"/>
+        </div>
+        <div class="btnPane">
+            <div class="button trdpbtn" id="changePasswordOk">
+                <div class="trdpbtnimg" id="loginImg">&nbsp;</div>
+                <div id="loginLbl">Change</div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------>
+</body>
+</html>

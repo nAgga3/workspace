@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="thinfinity-postdata" data-name="data" data-value='<%=data%>' />
+    <title><%=$LICPROD%></title>
+<link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/dav.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/template.colors.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/thinfinity-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>__themes__/custom-theme.css">
+
+<script type="text/javascript" src="<%=@BASEURL%>__base__/config/websettings"></script>
+<script type="text/javascript" src="common/js/global.variables.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>common/jquery/jquery.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>rdp.consts.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>dav.min.js"></script>
+
+</head>
+<body class="">
+    <!-- credentials dialog -->
+    <div id="credentialsDialog" class="dialog absoluteCenter hidden" style="border: 1px solid #b1b1b1; border-top: none; box-shadow: 2px 2px 5px 2px #b1b1b1;">
+        <form method="post">
+            <div class="header">Enter Credentials to Sign in </div>
+            <div class="body" >
+                <div class="table visible">
+                    <input type="hidden" id="publickey" />
+                    <div class="row">
+                        <div class="cell label">Username:</div>
+                        <div class="cell data">
+                            <input type="text" data-qatest="authusername_field" name="authusername" id="authusername" class="inputFullWidth" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell label">Password:</div>
+                        <div class="cell data"><input type="password" data-qatest="authpassword_field" name="" id="authpassword" class="inputFullWidth" autocomplete="off" /></div>
+                    </div>
+                    <div class="row" id="saveCredRow">
+                        <div class="cell label">&nbsp;</div>
+                        <div class="cell data"><input type="checkbox" name="saveCredentials" id="saveCredentials" /><label for="saveCredentials" class="relativeLabel">Save Credentials</label></div>
+                    </div>
+                </div>
+                <div id="authErrMessage" class="message hidden"></div>
+            </div>
+            <div class="footer right">
+                <div class="button selected" id="signInBtn" tabindex="0">
+                    <div class="icon fa thin-arrow-right"></div><div>Sign In</div>
+                </div>
+                <div class="button" id="cancelSingInBtn" tabindex="0">
+                    <div class="icon fa thin-cancel"></div><div>Cancel</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- credentials dialog -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="apple-touch-icon" href="images/icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title><%=$LICPROD%></title>
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/thinfinity-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%=@BASEURL%>common/css/template.colors.min.css" />
+<link rel="stylesheet" type="text/css" href="<%=@BASEURL%>css/sdk.min.css"/>
+
+<script type="text/javascript" src="<%=@BASEURL%>common/jquery/jquery.js"></script>
+<script type="text/javascript" src="common/js/global.variables.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>rdp.consts.min.js"></script>
+<script type="text/javascript" src="<%=@BASEURL%>sdk.min.js"></script>
+
+<script type="text/javascript" src="<%=@BASEURL%>js/sdk.js"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="images/idx/productlogo.svg" class="logo" alt="" />
+        <div id="btnlogout" class="hidden"><span>Logout</span></div>
+    </div>
+    <div class="menu">
+        <input type="button" id="btnSendEnter" class="toggle" value="ENTER" disabled="disabled" />
+        <input type="button" id="btnSelectLine" class="toggle" value="SELECT LINE" disabled="disabled" />
+        <input type="button" id="btnSelectWord" class="toggle" value="SELECT NEXT WORD" disabled="disabled" />
+        <input type="button" id="btnSendText" class="toggle" value="SEND 'This is a test...'" disabled="disabled" />&nbsp;
+        <input type="button" id="btnDisconnect" class="toggle" value="DISCONNECT" disabled="disabled" />
+        <input type="button" id="btnReset" value="RESET" disabled="disabled"/>
+    </div>
+    <div class="wizard">
+        <div class="wizard-options">
+			<h4>One-Time-URL</h4>
+			<div class="doc">
+			<p>This example shows how to use OTURL within an integration schema where an iframe-embedded RDP connection interacts with the parent webpage.</p>
+			<p>The On-Time-URL feature (OTURL) helps developers and integrators to create discardable, temporary connections using access profiles and User/Password security levels.</p>
+			<p>These are some situations in which the One-Time-URL might be useful:</p>
+			<ul>
+				<li>Giving access to a desktop or application to external users without having to weaken the Security level to None.</li>
+				<li>Generating temporary access to a desktop.</li>
+				<li>Integrating <%=$LICPROD%> on a Single-Sign-On Scheme along with external applications.</li>
+			</ul>
+			<p>To test this example, please fill the next textbox with a generated One-Time-URL address. If you don't have one, you can build it by using the <a href="oturltest.html" target="_blank">One-Time-URL generator example</a>.</p>
+			</div>
+            <input type="text" id="txtOtUrl" value="" placeholder="Please paste or type a valid OTURL here"/><br />
+            <input type="button" class="wizard-button" id="btnGoOTURL" value="Connect using OTURL"/>
+        </div>
+		<hr/>
+        <div class="wizard-options">
+			<h4>The JavaScript SDK</h4>
+			<div class="doc">
+			<p>The JavaScript SDK library allows you to integrate a fully functional remote desktop or remote application (including RemoteApp) inside other websites or web applications.</p>
+			<p>You have three ways to configure this feature: by using a pre-defined profile, defining all configurations items from JavaScript without a pre-defined profile,
+			or mixing both systems, starting with a pre-defined profile but changing or adding some configuration items from JavaScript.</p>
+			</div>
+            <input type="button" class="wizard-button" id="btnGoSDK" value="Connect using SDK"/>
+        </div>
+	</div>
+	<div class="connBox">
+        <div id="rdpbox"><div id="deskdiv"></div></div>
+		<div id="msgbox">
+			<span id="smessage"></span>
+			<span id="sizeInfo">
+				<span id="sizeWidth"></span>
+				<span>x</span>
+				<span id="sizeHeight"></span>
+			</span>
+		</div>
+    </div>
+	<div id="newWindowDiv">
+        <input type="checkbox" name="fullscreen" id="fullscreen" /><label id="lblfullscreen" for="fullscreen">Open in full screen</label>
+    </div>
+    <div class="bck-img footer blureable">
+        <small><span class="hiddenThin"><%=$LICPROD%> v<%=$VERSION%>. </span>All Rights Reserved &copy; 2010-2024 by <a href="https://www.cybelesoft.com/?utm_source=TRDS&utm_medium=Link&utm_campaign=Home" target="_blank">Cybele Software, Inc.</a></small>
+    </div>
+</body>
+</html>
